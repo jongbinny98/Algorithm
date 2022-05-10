@@ -7,7 +7,6 @@ To sort an array of size n in ascending order:
 3: If the key element is smaller than its predecessor,
    compare it to the elements before. 
    Move the greater elements one position up to make space for the swapped element.
-
 Time complexity: O(n^2)
 '''
 def insertion_sort(arr):
