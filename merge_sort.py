@@ -1,22 +1,48 @@
-import numpy as np
+# Python program for implementation of MergeSort
+def mergeSort(arr):
+		# Finding the mid of the array
+		mid = len(arr)//2
 
-def merge_sort(arr):
-    mid = arr // 2
-    print("mid: ", mid)
-    # left = [:mid]
+		# Dividing the array elements
+		L = arr[:mid]
 
+		# into 2 halves
+		R = arr[mid:]
 
+		# Sorting the first half
+		mergeSort(L)
 
-    return arr
+		# Sorting the second half
+		mergeSort(R)
 
+		i = j = k = 0
 
+		# Copy data to temp arrays L[] and R[]
+		while i < len(L) and j < len(R):
+			if L[i] < R[j]:
+				arr[k] = L[i]
+				i += 1
+			else:
+				arr[k] = R[j]
+				j += 1
+			k += 1
 
+		# Checking if any element was left
+		while i < len(L):
+			arr[k] = L[i]
+			i += 1
+			k += 1
 
-arr = np.array([3, 2, 1, 5, 3, 9, 3, 7])
-merge_sort(arr)
-print(arr)
-# for i in range(len(arr)):
-#     print(arr[i])
+		while j < len(R):
+			arr[k] = R[j]
+			j += 1
+			k += 1
 
-
-
+arr = [12, 11, 13, 5, 6, 7]
+print("given array: ")
+for i in range(len(arr)):
+    print(arr[i], end=" ")
+print("\nsorted array: ")
+mergeSort(arr)
+for j in range(len(arr)):
+	print(arr[j], end=" ")
