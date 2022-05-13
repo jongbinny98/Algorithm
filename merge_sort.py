@@ -1,5 +1,7 @@
 # Python program for implementation of MergeSort
 def mergeSort(arr):
+    #if not just return 
+	if len(arr) > 1:
 		# Finding the mid of the array
 		mid = len(arr)//2
 
