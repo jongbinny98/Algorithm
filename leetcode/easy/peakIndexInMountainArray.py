@@ -1,5 +1,5 @@
 class Solution:
-    def peakIndexInMountainArray(self, arr: []) -> int:
+    def peakIndexInMountainArray(self, arr:[]) -> int:
         ans = arr.index(max(arr))
         return ans
 
